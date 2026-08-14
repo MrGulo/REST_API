@@ -95,6 +95,16 @@ Response (200): Объект задачи.
 6. Обновить задачу
 ```bash
 PUT /tasks/{id}
+Authorization: Bearer <token> (Обязательно)
+Content-Type: application/json
+
+{
+  "title": "Сделать релиз API (Обновлено)",
+  "description": "Задеплоить сервис в Docker Compose на новый сервер",
+  "status": "in_progress",
+  "deadline": "2026-12-31T23:59:59Z",
+  "responsible_id": 1
+}
 ```
 Ограничение: Только создатель задачи может её изменять (Иначе 403 Forbidden).
 
@@ -109,20 +119,3 @@ DELETE /tasks/{id}
 Ограничение: Только создатель задачи может её удалить (Иначе 403 Forbidden).
 
 Response (204 No Content)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
